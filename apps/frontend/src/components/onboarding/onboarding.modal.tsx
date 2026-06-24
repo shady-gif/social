@@ -250,27 +250,30 @@ const OnboardingStep2: FC<{ onBack: () => void; onFinish: () => void }> = ({
     <div className="flex flex-col gap-[24px] flex-1">
       <div className="flex gap-[4px] flex-col text-center">
         <div className="text-[24px] font-semibold">
-          {t('watch_tutorial_title', 'Learn How to Use Postiz')}
+          {t('watch_tutorial_title', 'Your Social Hub Is Ready')}
         </div>
         <div className="text-[14px] text-customColor18">
           {t(
             'watch_tutorial_description',
-            'Watch this short video to learn how to get the most out of Postiz'
+            'Connect a channel, create a post, and choose when it should publish.'
           )}
         </div>
       </div>
 
-      {/* YouTube Video Embed */}
-      <div className="relative flex-1 rounded-[12px] overflow-hidden">
-        <div className="absolute left-0 top-0 w-full h-full flex justify-center">
-          <iframe
-            className="h-full aspect-video"
-            src="https://www.youtube.com/embed/BdsCVvEYgHU?si=vvhaZJ8I5oXXvVJS?autoplay=1"
-            title="Postiz Tutorial"
-            allow="autoplay"
-            allowFullScreen
-          />
-        </div>
+      <div className="flex flex-1 flex-col justify-center gap-[14px] rounded-[12px] border border-fifth bg-sixth p-[28px]">
+        {[
+          'Connect the approved Synergetics social channels.',
+          'Create platform-specific copy and add media.',
+          'Save as a draft, publish now, or schedule a date.',
+          'Check the calendar and analytics after publishing.',
+        ].map((tip, index) => (
+          <div key={tip} className="flex items-center gap-[14px]">
+            <div className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full bg-[#EF7F1A] font-semibold text-white">
+              {index + 1}
+            </div>
+            <div className="text-[15px]">{tip}</div>
+          </div>
+        ))}
       </div>
 
       {/* Action buttons */}

@@ -10,6 +10,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import clsx from 'clsx';
 import { VariableContextComponent } from '@gitroom/react/helpers/variable.context';
 import UtmSaver from '@gitroom/helpers/utils/utm.saver';
+import { BrandLegal } from '@gitroom/frontend/components/brand/brand-legal';
 
 const jakartaSans = Plus_Jakarta_Sans({
   weight: ['600', '500'],
@@ -21,7 +22,7 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
   return (
     <html>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/synergetics-social-hub.svg" type="image/svg+xml" />
       </head>
       <body
         className={clsx(jakartaSans.className, 'dark text-primary !bg-primary')}
@@ -72,6 +73,7 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
             </LayoutContext>
           </MantineWrapper>
         </VariableContextComponent>
+        <BrandLegal />
       </body>
     </html>
   );

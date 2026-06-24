@@ -4,7 +4,7 @@ import { Activate } from '@gitroom/frontend/components/auth/activate';
 import { isGeneralServerSide } from '@gitroom/helpers/utils/is.general.server.side';
 export const metadata: Metadata = {
   title: `${
-    isGeneralServerSide() ? 'Postiz' : 'Gitroom'
+    isGeneralServerSide() ? 'Synergetics Social Hub' : 'Synergetics Social Hub'
   } - Activate your account`,
   description: '',
 };
