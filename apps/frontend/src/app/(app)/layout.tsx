@@ -16,14 +16,9 @@ import UtmSaver from '@gitroom/helpers/utils/utm.saver';
 import { DubAnalytics } from '@gitroom/frontend/components/layout/dubAnalytics';
 import { FacebookComponent } from '@gitroom/frontend/components/layout/facebook.component';
 import { GoogleTagManagerComponent } from '@gitroom/frontend/components/layout/gtm.component';
-import { cookies } from 'next/headers';
-import {
-  cookieName,
-  fallbackLng,
-} from '@gitroom/react/translation/i18n.config';
+import { fallbackLng } from '@gitroom/react/translation/i18n.config';
 import { HtmlComponent } from '@gitroom/frontend/components/layout/html.component';
 import Script from 'next/script';
-import { ChangeDirClient } from '@gitroom/frontend/components/new-layout/change.dir.client';
 import { BrandLegal } from '@gitroom/frontend/components/brand/brand-legal';
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -33,8 +28,7 @@ const jakartaSans = Plus_Jakarta_Sans({
 });
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
-  const cookieStore = await cookies();
-  const language = cookieStore.get(cookieName)?.value || fallbackLng;
+  const language = fallbackLng;
   const Plausible = !!process.env.STRIPE_PUBLISHABLE_KEY
     ? PlausibleProvider
     : Fragment;
@@ -51,7 +45,6 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
           />
         )}
       </head>
-      <ChangeDirClient />
       <body
         className={clsx(jakartaSans.className, 'dark text-primary !bg-primary')}
       >

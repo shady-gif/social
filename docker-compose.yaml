@@ -1,6 +1,6 @@
 services:
   postiz:
-    image: ghcr.io/shady-gif/postiz-app:latest
+    image: ghcr.io/shady-gif/social:latest
     container_name: postiz
     restart: always
     environment:
